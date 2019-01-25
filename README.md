@@ -62,6 +62,6 @@ MONGO_ADMIN_PW: <MONGO ADMINISTRATOR PASSWORD>
 
 ## Authors
 
-* **Andres Galindo** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Andres Galindo** - *Initial work* - [ANDRESGALINDO](https://github.com/agalin920
 
 
