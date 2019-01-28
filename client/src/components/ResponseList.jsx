@@ -10,14 +10,9 @@ const listGroupStyles = {
 class ResponseList extends Component{
 
     render(){
-        if(this.props.responsesAreFetching){
-            return <Spinner color="danger"/>
-        }
-
-        else if(this.props.responses.length === 0){
+        if(this.props.responses.length === 0){
             return <h4 style={{textAlign:"center"}}>No responses</h4>;
         }
-        
         else{
             return(
                 <div>
