@@ -66,7 +66,7 @@ class Post extends Component{
             <div>
                 <div onClick={this.toggleCollapse}>{this.props.content} <span style={{float:"right"}}>{d.toGMTString()}</span></div>
                 <Collapse isOpen={this.state.collapse}>
-                    Number of responses: <Badge color="secondary">{this.props.responses.length}</Badge>
+                    Number of responses: <Badge color="secondary">{this.state.responses.length}</Badge>
                     <ResponseList responses={this.state.responses}/>
                     <Button style={buttonStyles} onClick={this.toggleModal} color="danger">Add a Response</Button>
                 </Collapse>
