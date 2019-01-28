@@ -25,18 +25,20 @@ npm -v
 
 Here are the steps to get a development env running
 
-1.First the backend must be running. To do so navigate into the backend folder and execute the start script
+1.First the backend must be running. To do so navigate into the backend folder, install the dependencies, and execute the start script
 
 ```
 cd backend
+npm install
 npm start
 ```
 This script will execute nodemon with the env variables set in the nodemon.json file(PORT by default is 5000). This makes for easier deployment which is mentioned later on.
 
-2.In order to run the development server navigate into the client folder and excute the start script
+2.In order to run the development server navigate into the client folder, install the dependencies and excute the start script
 
 ```
 cd client
+npm install
 npm start
 ```
 This script will start the development server on the default port(PORT 3000)
