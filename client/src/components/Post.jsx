@@ -28,12 +28,20 @@ class Post extends Component{
         this.state = {
           modal: false,
           collapse: false,
-          newResponse: ''
+          newResponse: '',
+          responses: []
         };
       }
 
+      componentWillReceiveProps(nextProps){
+        if(nextProps.responses.length === 0) return;
+        if(nextProps.responses[0].post_id === this.props.postId){
+            this.setState({responses:nextProps.responses})
+        }
+      }
+
     toggleCollapse = () => {
-        this.props.getResponses(this.props.postId);
+        if(!this.state.collapse) this.props.getResponses(this.props.postId);
         this.setState({ collapse: !this.state.collapse });
       }
 
@@ -44,7 +52,6 @@ class Post extends Component{
       }
 
     handleChange = (e) =>{
-        console.log(e.target.value);
         this.setState({newResponse: e.target.value});
     }
 
@@ -59,8 +66,8 @@ class Post extends Component{
             <div>
                 <div onClick={this.toggleCollapse}>{this.props.content} <span style={{float:"right"}}>{d.toGMTString()}</span></div>
                 <Collapse isOpen={this.state.collapse}>
-                    Number of responses: <Badge color="secondary">{this.props.responseCount.length}</Badge>
-                    <ResponseList postId={this.props.postId}/>
+                    Number of responses: <Badge color="secondary">{this.props.responses.length}</Badge>
+                    <ResponseList responses={this.state.responses}/>
                     <Button style={buttonStyles} onClick={this.toggleModal} color="danger">Add a Response</Button>
                 </Collapse>
 
@@ -82,7 +89,7 @@ class Post extends Component{
 
 const mapStateToProps = (state) => {
 	return({
-        responseCount:state.responseReducer.responses
+        responses:state.responseReducer.responses
 	});
   }
 
