@@ -34,7 +34,7 @@ npm start
 ```
 This script will execute nodemon with the env variables set in the nodemon.json file(PORT by default is 5000). This makes for easier deployment which is mentioned later on.
 
-2.In order to run the development server navigate into the client folder, install the dependencies and excute the start script
+2.In order to run the development server navigate into the client folder, install the dependencies, and excute the start script
 
 ```
 cd client
